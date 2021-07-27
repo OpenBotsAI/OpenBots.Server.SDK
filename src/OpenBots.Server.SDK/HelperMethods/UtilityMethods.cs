@@ -43,7 +43,7 @@ namespace OpenBots.Server.SDK.HelperMethods
             {
                 string errorCode = ex.GetType()?.GetProperty("ErrorCode")?.GetValue(ex, null)?.ToString();
 
-                if (string.IsNullOrEmpty(errorCode))
+                if (string.IsNullOrEmpty(errorCode) && ex.InnerException != null)
                     errorCode = ex.InnerException.Message.Contains("401: Unauthorized") ? "401" : "";
 
                 return errorCode;

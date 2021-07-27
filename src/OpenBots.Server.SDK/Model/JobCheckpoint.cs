@@ -50,15 +50,7 @@ namespace OpenBots.Server.SDK.Model
         /// <param name="jobId">jobId.</param>
         public JobCheckpoint(Guid? id = default(Guid?), bool? isDeleted = false, string createdBy = default(string), DateTime? createdOn = default(DateTime?), string deletedBy = default(string), DateTime? deleteOn = default(DateTime?), byte[] timestamp = default(byte[]), DateTime? updatedOn = default(DateTime?), string updatedBy = default(string), string name = default(string), string message = default(string), string iterator = default(string), string iteratorValue = default(string), int? iteratorPosition = default(int?), int? iteratorCount = default(int?), Guid? jobId = default(Guid?))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new InvalidDataException("name is a required property for JobCheckpoint and cannot be null");
-            }
-            else
-            {
-                this.Name = name;
-            }
+            this.Name = name;
             this.Id = id;
             // use default value if no "isDeleted" provided
             if (isDeleted == null)

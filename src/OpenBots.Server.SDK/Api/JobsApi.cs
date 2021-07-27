@@ -262,9 +262,10 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>JobCheckpoint</returns>
-        JobCheckpoint ApiVapiVersionJobsJobIdAddCheckpointPost (string jobId, string apiVersion, JobCheckpoint body = null);
+        JobCheckpoint ApiVapiVersionJobsJobIdAddCheckpointPost (string jobId, string apiVersion, string organizationId, JobCheckpoint body = null);
 
         /// <summary>
         /// Adds checkpoint to the existing JobCheckPoints
@@ -275,9 +276,10 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of JobCheckpoint</returns>
-        ApiResponse<JobCheckpoint> ApiVapiVersionJobsJobIdAddCheckpointPostWithHttpInfo (string jobId, string apiVersion, JobCheckpoint body = null);
+        ApiResponse<JobCheckpoint> ApiVapiVersionJobsJobIdAddCheckpointPostWithHttpInfo (string jobId, string apiVersion, string organizationId, JobCheckpoint body = null);
         /// <summary>
         /// Adds a new job to the existing jobs
         /// </summary>
@@ -385,12 +387,13 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId">Job id</param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="filter"> (optional)</param>
         /// <param name="orderby"> (optional)</param>
         /// <param name="top"> (optional, default to 100)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>JobCheckpointPaginatedList</returns>
-        JobCheckpointPaginatedList GetJobCheckpoint (string jobId, string apiVersion, string filter = null, string orderby = null, int? top = null, int? skip = null);
+        JobCheckpointPaginatedList GetJobCheckpoint (string jobId, string apiVersion, string organizationId, string filter = null, string orderby = null, int? top = null, int? skip = null);
 
         /// <summary>
         /// Provides a checkpoint&#x27;s view model details for a particular job id
@@ -401,12 +404,13 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId">Job id</param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="filter"> (optional)</param>
         /// <param name="orderby"> (optional)</param>
         /// <param name="top"> (optional, default to 100)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>ApiResponse of JobCheckpointPaginatedList</returns>
-        ApiResponse<JobCheckpointPaginatedList> GetJobCheckpointWithHttpInfo (string jobId, string apiVersion, string filter = null, string orderby = null, int? top = null, int? skip = null);
+        ApiResponse<JobCheckpointPaginatedList> GetJobCheckpointWithHttpInfo (string jobId, string apiVersion, string organizationId, string filter = null, string orderby = null, int? top = null, int? skip = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -647,9 +651,10 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of JobCheckpoint</returns>
-        System.Threading.Tasks.Task<JobCheckpoint> ApiVapiVersionJobsJobIdAddCheckpointPostAsync (string jobId, string apiVersion, JobCheckpoint body = null);
+        System.Threading.Tasks.Task<JobCheckpoint> ApiVapiVersionJobsJobIdAddCheckpointPostAsync (string jobId, string apiVersion, string organizationId, JobCheckpoint body = null);
 
         /// <summary>
         /// Adds checkpoint to the existing JobCheckPoints
@@ -660,9 +665,10 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse (JobCheckpoint)</returns>
-        System.Threading.Tasks.Task<ApiResponse<JobCheckpoint>> ApiVapiVersionJobsJobIdAddCheckpointPostAsyncWithHttpInfo (string jobId, string apiVersion, JobCheckpoint body = null);
+        System.Threading.Tasks.Task<ApiResponse<JobCheckpoint>> ApiVapiVersionJobsJobIdAddCheckpointPostAsyncWithHttpInfo (string jobId, string apiVersion, string organizationId, JobCheckpoint body = null);
         /// <summary>
         /// Adds a new job to the existing jobs
         /// </summary>
@@ -770,12 +776,13 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId">Job id</param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="filter"> (optional)</param>
         /// <param name="orderby"> (optional)</param>
         /// <param name="top"> (optional, default to 100)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>Task of JobCheckpointPaginatedList</returns>
-        System.Threading.Tasks.Task<JobCheckpointPaginatedList> GetJobCheckpointAsync (string jobId, string apiVersion, string filter = null, string orderby = null, int? top = null, int? skip = null);
+        System.Threading.Tasks.Task<JobCheckpointPaginatedList> GetJobCheckpointAsync (string jobId, string apiVersion, string organizationId, string filter = null, string orderby = null, int? top = null, int? skip = null);
 
         /// <summary>
         /// Provides a checkpoint&#x27;s view model details for a particular job id
@@ -786,12 +793,13 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId">Job id</param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="filter"> (optional)</param>
         /// <param name="orderby"> (optional)</param>
         /// <param name="top"> (optional, default to 100)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (JobCheckpointPaginatedList)</returns>
-        System.Threading.Tasks.Task<ApiResponse<JobCheckpointPaginatedList>> GetJobCheckpointAsyncWithHttpInfo (string jobId, string apiVersion, string filter = null, string orderby = null, int? top = null, int? skip = null);
+        System.Threading.Tasks.Task<ApiResponse<JobCheckpointPaginatedList>> GetJobCheckpointAsyncWithHttpInfo (string jobId, string apiVersion, string organizationId, string filter = null, string orderby = null, int? top = null, int? skip = null);
         #endregion Asynchronous Operations
     }
 
@@ -2434,11 +2442,12 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>JobCheckpoint</returns>
-        public JobCheckpoint ApiVapiVersionJobsJobIdAddCheckpointPost (string jobId, string apiVersion, JobCheckpoint body = null)
+        public JobCheckpoint ApiVapiVersionJobsJobIdAddCheckpointPost (string jobId, string apiVersion, string organizationId, JobCheckpoint body = null)
         {
-             ApiResponse<JobCheckpoint> localVarResponse = ApiVapiVersionJobsJobIdAddCheckpointPostWithHttpInfo(jobId, apiVersion, body);
+             ApiResponse<JobCheckpoint> localVarResponse = ApiVapiVersionJobsJobIdAddCheckpointPostWithHttpInfo(jobId, apiVersion, organizationId, body);
              return localVarResponse.Data;
         }
 
@@ -2448,9 +2457,10 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of JobCheckpoint</returns>
-        public ApiResponse< JobCheckpoint > ApiVapiVersionJobsJobIdAddCheckpointPostWithHttpInfo (string jobId, string apiVersion, JobCheckpoint body = null)
+        public ApiResponse< JobCheckpoint > ApiVapiVersionJobsJobIdAddCheckpointPostWithHttpInfo (string jobId, string apiVersion, string organizationId, JobCheckpoint body = null)
         {
             // verify the required parameter 'jobId' is set
             if (jobId == null)
@@ -2460,6 +2470,8 @@ namespace OpenBots.Server.SDK.Api
                 throw new ApiException(400, "Missing required parameter 'apiVersion' when calling JobsApi->ApiVapiVersionJobsJobIdAddCheckpointPost");
 
             var localVarPath = "/api/v{apiVersion}/Jobs/{jobId}/AddCheckpoint";
+            if (!string.IsNullOrEmpty(organizationId))
+                localVarPath = "/api/v{apiVersion}/Organizations/{organizationId}/Jobs/{jobId}/AddCheckpoint";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -2486,6 +2498,7 @@ namespace OpenBots.Server.SDK.Api
 
             if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId)); // path parameter
             if (apiVersion != null) localVarPathParams.Add("apiVersion", this.Configuration.ApiClient.ParameterToString(apiVersion)); // path parameter
+            if (!string.IsNullOrEmpty(organizationId)) localVarPathParams.Add("organizationId", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -2525,11 +2538,12 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of JobCheckpoint</returns>
-        public async System.Threading.Tasks.Task<JobCheckpoint> ApiVapiVersionJobsJobIdAddCheckpointPostAsync (string jobId, string apiVersion, JobCheckpoint body = null)
+        public async System.Threading.Tasks.Task<JobCheckpoint> ApiVapiVersionJobsJobIdAddCheckpointPostAsync (string jobId, string apiVersion, string organizationId, JobCheckpoint body = null)
         {
-             ApiResponse<JobCheckpoint> localVarResponse = await ApiVapiVersionJobsJobIdAddCheckpointPostAsyncWithHttpInfo(jobId, apiVersion, body);
+             ApiResponse<JobCheckpoint> localVarResponse = await ApiVapiVersionJobsJobIdAddCheckpointPostAsyncWithHttpInfo(jobId, apiVersion, organizationId, body);
              return localVarResponse.Data;
 
         }
@@ -2540,9 +2554,10 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId"></param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse (JobCheckpoint)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<JobCheckpoint>> ApiVapiVersionJobsJobIdAddCheckpointPostAsyncWithHttpInfo (string jobId, string apiVersion, JobCheckpoint body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<JobCheckpoint>> ApiVapiVersionJobsJobIdAddCheckpointPostAsyncWithHttpInfo (string jobId, string apiVersion, string organizationId, JobCheckpoint body = null)
         {
             // verify the required parameter 'jobId' is set
             if (jobId == null)
@@ -2552,6 +2567,8 @@ namespace OpenBots.Server.SDK.Api
                 throw new ApiException(400, "Missing required parameter 'apiVersion' when calling JobsApi->ApiVapiVersionJobsJobIdAddCheckpointPost");
 
             var localVarPath = "/api/v{apiVersion}/Jobs/{jobId}/AddCheckpoint";
+            if (!string.IsNullOrEmpty(organizationId))
+                localVarPath = "/api/v{apiVersion}/Organizations/{organizationId}/Jobs/{jobId}/AddCheckpoint";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -2578,6 +2595,7 @@ namespace OpenBots.Server.SDK.Api
 
             if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId)); // path parameter
             if (apiVersion != null) localVarPathParams.Add("apiVersion", this.Configuration.ApiClient.ParameterToString(apiVersion)); // path parameter
+            if (!string.IsNullOrEmpty(organizationId)) localVarPathParams.Add("organizationId", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
@@ -3274,14 +3292,15 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId">Job id</param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="filter"> (optional)</param>
         /// <param name="orderby"> (optional)</param>
         /// <param name="top"> (optional, default to 100)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>JobCheckpointPaginatedList</returns>
-        public JobCheckpointPaginatedList GetJobCheckpoint (string jobId, string apiVersion, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        public JobCheckpointPaginatedList GetJobCheckpoint (string jobId, string apiVersion, string organizationId, string filter = null, string orderby = null, int? top = null, int? skip = null)
         {
-             ApiResponse<JobCheckpointPaginatedList> localVarResponse = GetJobCheckpointWithHttpInfo(jobId, apiVersion, filter, orderby, top, skip);
+             ApiResponse<JobCheckpointPaginatedList> localVarResponse = GetJobCheckpointWithHttpInfo(jobId, apiVersion, organizationId, filter, orderby, top, skip);
              return localVarResponse.Data;
         }
 
@@ -3291,12 +3310,13 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId">Job id</param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="filter"> (optional)</param>
         /// <param name="orderby"> (optional)</param>
         /// <param name="top"> (optional, default to 100)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>ApiResponse of JobCheckpointPaginatedList</returns>
-        public ApiResponse< JobCheckpointPaginatedList > GetJobCheckpointWithHttpInfo (string jobId, string apiVersion, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        public ApiResponse< JobCheckpointPaginatedList > GetJobCheckpointWithHttpInfo (string jobId, string apiVersion, string organizationId, string filter = null, string orderby = null, int? top = null, int? skip = null)
         {
             // verify the required parameter 'jobId' is set
             if (jobId == null)
@@ -3306,6 +3326,8 @@ namespace OpenBots.Server.SDK.Api
                 throw new ApiException(400, "Missing required parameter 'apiVersion' when calling JobsApi->GetJobCheckpoint");
 
             var localVarPath = "/api/v{apiVersion}/Jobs/{jobId}/JobCheckpoints";
+            if (!string.IsNullOrEmpty(organizationId))
+                localVarPath = "/api/v{apiVersion}/Organizations/{organizationId}/Jobs/{jobId}/JobCheckpoints";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -3328,6 +3350,7 @@ namespace OpenBots.Server.SDK.Api
 
             if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId)); // path parameter
             if (apiVersion != null) localVarPathParams.Add("apiVersion", this.Configuration.ApiClient.ParameterToString(apiVersion)); // path parameter
+            if (!string.IsNullOrEmpty(organizationId)) localVarPathParams.Add("organizationId", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
             if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
             if (orderby != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
             if (top != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
@@ -3363,14 +3386,15 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId">Job id</param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="filter"> (optional)</param>
         /// <param name="orderby"> (optional)</param>
         /// <param name="top"> (optional, default to 100)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>Task of JobCheckpointPaginatedList</returns>
-        public async System.Threading.Tasks.Task<JobCheckpointPaginatedList> GetJobCheckpointAsync (string jobId, string apiVersion, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        public async System.Threading.Tasks.Task<JobCheckpointPaginatedList> GetJobCheckpointAsync (string jobId, string apiVersion, string organizationId, string filter = null, string orderby = null, int? top = null, int? skip = null)
         {
-             ApiResponse<JobCheckpointPaginatedList> localVarResponse = await GetJobCheckpointAsyncWithHttpInfo(jobId, apiVersion, filter, orderby, top, skip);
+             ApiResponse<JobCheckpointPaginatedList> localVarResponse = await GetJobCheckpointAsyncWithHttpInfo(jobId, apiVersion, organizationId, filter, orderby, top, skip);
              return localVarResponse.Data;
 
         }
@@ -3381,12 +3405,13 @@ namespace OpenBots.Server.SDK.Api
         /// <exception cref="OpenBots.Server.SDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="jobId">Job id</param>
         /// <param name="apiVersion"></param>
+        /// <param name="organizationId"></param>
         /// <param name="filter"> (optional)</param>
         /// <param name="orderby"> (optional)</param>
         /// <param name="top"> (optional, default to 100)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>Task of ApiResponse (JobCheckpointPaginatedList)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<JobCheckpointPaginatedList>> GetJobCheckpointAsyncWithHttpInfo (string jobId, string apiVersion, string filter = null, string orderby = null, int? top = null, int? skip = null)
+        public async System.Threading.Tasks.Task<ApiResponse<JobCheckpointPaginatedList>> GetJobCheckpointAsyncWithHttpInfo (string jobId, string apiVersion, string organizationId, string filter = null, string orderby = null, int? top = null, int? skip = null)
         {
             // verify the required parameter 'jobId' is set
             if (jobId == null)
@@ -3396,6 +3421,8 @@ namespace OpenBots.Server.SDK.Api
                 throw new ApiException(400, "Missing required parameter 'apiVersion' when calling JobsApi->GetJobCheckpoint");
 
             var localVarPath = "/api/v{apiVersion}/Jobs/{jobId}/JobCheckpoints";
+            if (!string.IsNullOrEmpty(organizationId))
+                localVarPath = "/api/v{apiVersion}/Organizations/{organizationId}/Jobs/{jobId}/JobCheckpoints";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -3418,6 +3445,7 @@ namespace OpenBots.Server.SDK.Api
 
             if (jobId != null) localVarPathParams.Add("jobId", this.Configuration.ApiClient.ParameterToString(jobId)); // path parameter
             if (apiVersion != null) localVarPathParams.Add("apiVersion", this.Configuration.ApiClient.ParameterToString(apiVersion)); // path parameter
+            if (!string.IsNullOrEmpty(organizationId)) localVarPathParams.Add("organizationId", this.Configuration.ApiClient.ParameterToString(organizationId)); // path parameter
             if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$filter", filter)); // query parameter
             if (orderby != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$orderby", orderby)); // query parameter
             if (top != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "$top", top)); // query parameter
@@ -3442,9 +3470,10 @@ namespace OpenBots.Server.SDK.Api
                 if (exception != null) throw exception;
             }
 
+            var paginatedCheckpoints = JsonConvert.DeserializeObject<JobCheckpointPaginatedList>(localVarResponse.Content);
+
             return new ApiResponse<JobCheckpointPaginatedList>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (JobCheckpointPaginatedList) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JobCheckpointPaginatedList)));
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)), paginatedCheckpoints);
         }
 
     }

@@ -2,6 +2,7 @@
 using OpenBots.Server.SDK.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OpenBots.Server.SDK.HelperMethods
 {
@@ -99,6 +100,77 @@ namespace OpenBots.Server.SDK.HelperMethods
             }
         }
 
+        public static void AddJobCheckpoint(UserInfo userInfo, string jobId, JobCheckpoint body, int count = 0)
+        {
+            var jobsApi = GetApiInstance(userInfo.Token, userInfo.ServerUrl);
+
+            try
+            {
+                jobsApi.ApiVapiVersionJobsJobIdAddCheckpointPostAsyncWithHttpInfo(jobId, userInfo.ApiVersion, userInfo.OrganizationId, body).Wait();
+            }
+            catch (Exception ex)
+            {
+                if (UtilityMethods.GetErrorCode(ex) == "401" && count < 2)
+                {
+                    UtilityMethods.RefreshToken(userInfo);
+                    count++;
+                    AddJobCheckpoint(userInfo, jobId, body, count);
+                }
+                else if (ex.Message != "One or more errors occurred.")
+                    throw new InvalidOperationException("Exception when calling JobsApi.AddJobCheckpoint: " + ex.Message);
+                else
+                    throw new InvalidOperationException(ex.InnerException.Message);
+            }
+        }
+
+        public static List<JobCheckpoint> GetJobCheckpoints(UserInfo userInfo, string jobId, int count = 0)
+        {
+            var jobsApi = GetApiInstance(userInfo.Token, userInfo.ServerUrl);
+
+            try
+            {
+                return jobsApi.GetJobCheckpointAsyncWithHttpInfo(jobId, userInfo.ApiVersion, userInfo.OrganizationId).Result.Data.Items;
+            }
+            catch (Exception ex)
+            {
+                if (UtilityMethods.GetErrorCode(ex) == "401" && count < 2)
+                {
+                    UtilityMethods.RefreshToken(userInfo);
+                    count++;
+                    return GetJobCheckpoints(userInfo, jobId, count);
+                }
+                else if (ex.Message != "One or more errors occurred.")
+                    throw new InvalidOperationException("Exception when calling JobsApi.GetJobCheckpoints: " + ex.Message);
+                else
+                    throw new InvalidOperationException(ex.InnerException.Message);
+            }
+        }
+
+        public static JobCheckpoint GetJobCheckpointById(UserInfo userInfo, string jobId, string checkpointId, int count = 0)
+        {
+            var jobsApi = GetApiInstance(userInfo.Token, userInfo.ServerUrl);
+
+            try
+            {
+                string filter = $"Id eq guid'{checkpointId}'";
+                var result = jobsApi.GetJobCheckpointAsyncWithHttpInfo(jobId, userInfo.ApiVersion, userInfo.OrganizationId, filter).Result.Data;
+                return result.Items.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                if (UtilityMethods.GetErrorCode(ex) == "401" && count < 2)
+                {
+                    UtilityMethods.RefreshToken(userInfo);
+                    count++;
+                    return GetJobCheckpointById(userInfo, jobId, checkpointId, count);
+                }
+                else if (ex.Message != "One or more errors occurred.")
+                    throw new InvalidOperationException("Exception when calling JobsApi.GetJobCheckpointById: " + ex.Message);
+                else
+                    throw new InvalidOperationException(ex.InnerException.Message);
+            }
+        }
+
         public static string GetJobStatus(UserInfo userInfo, string jobId)
         {
             var job = GetJobViewModel(userInfo, jobId);
@@ -115,5 +187,6 @@ namespace OpenBots.Server.SDK.HelperMethods
 
             return apiInstance;
         }
+
     }
 }
