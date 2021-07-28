@@ -30,13 +30,16 @@ namespace OpenBots.Server.SDK.Model
     public partial class ResolveAgentViewModel : IEquatable<ResolveAgentViewModel>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ResolveAgentViewModel" /> class.
+        /// Initializes a new instance of the <see cref="ResolveAgentViewModel"/> class.
         /// </summary>
-        /// <param name="agentGroupName">agentGroupName.</param>
-        /// <param name="agentName">agentName.</param>
-        /// <param name="hostMachineName">hostMachineName (required).</param>
-        /// <param name="macAddressesCS">macAddressesCS.</param>
-        public ResolveAgentViewModel(string agentGroupName = default(string), string agentName = default(string), string hostMachineName = default(string), string macAddressesCS = default(string))
+        /// <param name="agentGroupName">Name of the agent group.</param>
+        /// <param name="hostMachineName">Name of the host machine.</param>
+        /// <param name="macAddressesCS">The mac addresses cs.</param>
+        /// <param name="ProvisionKey">The provision key.</param>
+        /// <param name="Username">The username.</param>
+        /// <param name="Domain">The domain.</param>
+        /// <exception cref="InvalidDataException">hostMachineName is a required property for ResolveAgentViewModel and cannot be null</exception>
+        public ResolveAgentViewModel(string agentGroupName = default(string), string hostMachineName = default(string), string macAddressesCS = default(string), string ProvisionKey = default(string), string Username = default(string), string Domain = default(string))
         {
             // to ensure "hostMachineName" is required (not null)
             if (hostMachineName == null)
@@ -48,8 +51,11 @@ namespace OpenBots.Server.SDK.Model
                 this.HostMachineName = hostMachineName;
             }
             this.AgentGroupName = agentGroupName;
-            this.AgentName = agentName;
             this.MacAddressesCS = macAddressesCS;
+            this.ProvisionKey = ProvisionKey;
+            this.Username = Username;
+            this.Domain = Domain;
+
         }
 
         /// <summary>
@@ -57,12 +63,6 @@ namespace OpenBots.Server.SDK.Model
         /// </summary>
         [DataMember(Name = "agentGroupName", EmitDefaultValue = false)]
         public string AgentGroupName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AgentName
-        /// </summary>
-        [DataMember(Name = "agentName", EmitDefaultValue = false)]
-        public string AgentName { get; set; }
 
         /// <summary>
         /// Gets or Sets HostMachineName
@@ -77,6 +77,24 @@ namespace OpenBots.Server.SDK.Model
         public string MacAddressesCS { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProvisionKey
+        /// </summary>
+        [DataMember(Name = "provisionKey", EmitDefaultValue = false)]
+        public string ProvisionKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Username
+        /// </summary>
+        [DataMember(Name = "username", EmitDefaultValue = false)]
+        public string Username { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Domain
+        /// </summary>
+        [DataMember(Name = "domain", EmitDefaultValue = false)]
+        public string Domain { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -85,9 +103,11 @@ namespace OpenBots.Server.SDK.Model
             var sb = new StringBuilder();
             sb.Append("class ResolveAgentViewModel {\n");
             sb.Append("  AgentGroupName: ").Append(AgentGroupName).Append("\n");
-            sb.Append("  AgentName: ").Append(AgentName).Append("\n");
             sb.Append("  HostMachineName: ").Append(HostMachineName).Append("\n");
             sb.Append("  MacAddressesCS: ").Append(MacAddressesCS).Append("\n");
+            sb.Append("  ProvisionKey: ").Append(ProvisionKey).Append("\n");
+            sb.Append("  Username: ").Append(Username).Append("\n");
+            sb.Append("  Domain: ").Append(Domain).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -128,11 +148,6 @@ namespace OpenBots.Server.SDK.Model
                     this.AgentGroupName.Equals(input.AgentGroupName))
                 ) &&
                 (
-                    this.AgentName == input.AgentName ||
-                    (this.AgentName != null &&
-                    this.AgentName.Equals(input.AgentName))
-                ) &&
-                (
                     this.HostMachineName == input.HostMachineName ||
                     (this.HostMachineName != null &&
                     this.HostMachineName.Equals(input.HostMachineName))
@@ -141,6 +156,21 @@ namespace OpenBots.Server.SDK.Model
                     this.MacAddressesCS == input.MacAddressesCS ||
                     (this.MacAddressesCS != null &&
                     this.MacAddressesCS.Equals(input.MacAddressesCS))
+                ) &&
+                (
+                    this.ProvisionKey == input.ProvisionKey ||
+                    (this.ProvisionKey != null &&
+                    this.ProvisionKey.Equals(input.ProvisionKey))
+                ) &&
+                (
+                    this.Username == input.Username ||
+                    (this.Username != null &&
+                    this.Username.Equals(input.Username))
+                ) &&
+                (
+                    this.Domain == input.Domain ||
+                    (this.Domain != null &&
+                    this.Domain.Equals(input.Domain))
                 );
         }
 
@@ -155,12 +185,16 @@ namespace OpenBots.Server.SDK.Model
                 int hashCode = 41;
                 if (this.AgentGroupName != null)
                     hashCode = hashCode * 59 + this.AgentGroupName.GetHashCode();
-                if (this.AgentName != null)
-                    hashCode = hashCode * 59 + this.AgentName.GetHashCode();
                 if (this.HostMachineName != null)
                     hashCode = hashCode * 59 + this.HostMachineName.GetHashCode();
                 if (this.MacAddressesCS != null)
                     hashCode = hashCode * 59 + this.MacAddressesCS.GetHashCode();
+                if (this.ProvisionKey != null)
+                    hashCode = hashCode * 59 + this.ProvisionKey.GetHashCode();
+                if (this.Username != null)
+                    hashCode = hashCode * 59 + this.Username.GetHashCode();
+                if (this.Domain != null)
+                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }
